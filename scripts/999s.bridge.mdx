@@ -21,16 +21,16 @@ NS.createSchema('999s:test-get-name', { name = 1, age = 2 })
 	.registerAs('test-get-name')
 ```
 
-| Parameter  | Type                    | Description                                          | Note                  |
-| ---------- | ----------------------- | ---------------------------------------------------- | --------------------- |
-| name       | string \| string[]      | ชื่อสามารถเป็นแค่ string หรือ { 'abc', 'def' }       |                       |
-| paramsSort | table\<string, number\> | เป็นการกำหนดลำดับของ Parameter ที่ส่งเข้ามายัง Event | { name = 1, age = 2 } |
+| Parameter  | Type                    | Description                                          | Note              |
+| ---------- | ----------------------- | ---------------------------------------------------- | ----------------- |
+| name       | string \| string[]      | ชื่อสามารถเป็นแค่ string หรือ  'abc', 'def'          |                   |
+| paramsSort | table\<string, number\> | เป็นการกำหนดลำดับของ Parameter ที่ส่งเข้ามายัง Event | name = 1, age = 2 |
 
-การเรียกใช้ฟังก์ชั่น `registerAs` เป็นการบอกให้ระบบจดจำข้อมูล **schema** นี้เพื่อจะนำไปใช้ในขั้นตอนการสร้าง **Event** หรือการ **Trigger Event** 
+การเรียกใช้ฟังก์ชั่น `registerAs` เป็นการบอกให้ระบบจดจำข้อมูล **schema** นี้เพื่อจะนำไปใช้ในขั้นตอนการสร้าง **Event** หรือการ **Trigger Event**
 
-และนอกจากนี้คุณยังสามารถกำหนด **Parameters Type** ได้อีกด้วยหลังจากที่ใช้งานฟังก์ชั่น `createSchema` 
+และนอกจากนี้คุณยังสามารถกำหนด **Parameters Type** ได้อีกด้วยหลังจากที่ใช้งานฟังก์ชั่น `createSchema`
 
-```
+```lua
 NS.createSchema('999s:test-get-name', { name = 1, age = 2 })
 	.makeTypes({
 		name = 'string',
@@ -68,7 +68,7 @@ TriggerEvent('999s:test-get-name', '999s', 20)
 
 </CodeGroup>
 
-จะเห็นได้ว่า `paramsSort` ที่เราได้ตั้งใน **schema** นั้นเราจะนำมาใช้ `get` ข้อมูลที่ **Event** ได้รับมาจากตัวอย่างเราทำการ `get` มาสองข้อมูลก็คือ `name` และ `age` 
+จะเห็นได้ว่า `paramsSort` ที่เราได้ตั้งใน **schema** นั้นเราจะนำมาใช้ `get` ข้อมูลที่ **Event** ได้รับมาจากตัวอย่างเราทำการ `get` มาสองข้อมูลก็คือ `name` และ `age`
 
 | Parameter        | Type                   | Description                                                                         | Note                                       |
 | ---------------- | ---------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------ |
