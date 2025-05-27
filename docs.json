@@ -24,10 +24,16 @@
             "pages": [
               {
                 "group": "999s Bridge",
+                "icon": "code",
                 "pages": [
                   "scripts/999s-bridge/getting-started",
                   "scripts/999s-bridge/schema-manager",
-                  "scripts/999s-bridge/event-manager"
+                  "scripts/999s-bridge/event-manager",
+                  {
+                    "anchor": "Documentation",
+                    "href": "https://999s.mintlify.app/",
+                    "icon": "book-open-cover"
+                  }
                 ]
               }
             ]
