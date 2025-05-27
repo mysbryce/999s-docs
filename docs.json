@@ -14,7 +14,7 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Getting Started",
             "pages": [
               "index"
             ]
@@ -26,13 +26,14 @@
                 "group": "999s Bridge",
                 "icon": "code",
                 "pages": [
+                  {
+                    "group": "Getting Started",
+                    "icon": "1",
+                    "pages": ["scripts/999s-bridge/getting-started"]
+                  },
                   "scripts/999s-bridge/getting-started",
                   "scripts/999s-bridge/schema-manager",
-                  "scripts/999s-bridge/event-manager",
-                  {
-                    "tab": "Blog",
-                    "href": "https://external-link.com/blog"
-                  }
+                  "scripts/999s-bridge/event-manager"
                 ]
               }
             ]
