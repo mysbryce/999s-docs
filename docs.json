@@ -22,7 +22,7 @@
           {
             "group": "Resources",
             "pages": [
-              "scripts/999s.bridge"
+              "scripts/999s-bridge/getting-started"
             ]
           }
         ]
