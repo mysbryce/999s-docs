@@ -10,12 +10,10 @@ description: "นี่คือ Script ที่จะเปลี่ยนร�
 
 ## Schema Manager
 
-Schema นั้นจำเป็นในการที่จะใช้ร่วมกันกับ Event Manager โดยรูปแบบการสร้าง Schema เบื้องต้นเป็นดังนี้
+**Schema** นั้นจำเป็นในการที่จะใช้ร่วมกันกับ **Event Manager** โดยรูปแบบการสร้าง **Schema** เบื้องต้นเป็นดังนี้
 
 ```lua
---[[
-	NS.createSchema(name, paramsSort)
-]]
+-- NS.createSchema(name, paramsSort)
 
 NS.createSchema('999s:test-get-name', { name = 1, age = 2 })
 	.registerAs('test-get-name')
@@ -50,9 +48,7 @@ NS.createSchema('999s:test-get-name', { name = 1, age = 2 })
 <CodeGroup>
 
 ```lua main.lua
---[[
-	NS.onEvent(schemaName, fn, isNet)
-]]
+-- NS.onEvent(schemaName, fn, isNet)
 
 NS.onEvent('test-get-name', function(ctx)
 	local name = ctx.get('name')
