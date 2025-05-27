@@ -28,7 +28,8 @@
                 "pages": [
                   "scripts/999s-bridge/getting-started",
                   "scripts/999s-bridge/schema-manager",
-                  "scripts/999s-bridge/event-manager"
+                  "scripts/999s-bridge/event-manager",
+                  "scripts/999s-bridge/debug"
                 ]
               }
             ]
