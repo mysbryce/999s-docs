@@ -14,7 +14,7 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "เริ่มต้นใช้งาน",
+            "group": "Get Started",
             "pages": [
               "index"
             ]
@@ -36,14 +36,9 @@
           "icon": "book-open-cover"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Portfolio",
+          "href": "https://stateless-prt.vercel.app",
+          "icon": "desktop"
         }
       ]
     }
