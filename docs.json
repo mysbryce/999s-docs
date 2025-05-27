@@ -28,7 +28,11 @@
                 "pages": [
                   "scripts/999s-bridge/getting-started",
                   "scripts/999s-bridge/schema-manager",
-                  "scripts/999s-bridge/event-manager"
+                  "scripts/999s-bridge/event-manager",
+                  {
+                    "tab": "Blog",
+                    "href": "https://external-link.com/blog"
+                  }
                 ]
               }
             ]
