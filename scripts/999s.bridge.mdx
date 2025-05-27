@@ -3,7 +3,80 @@ title: "999s-bridge"
 description: "นี่คือ Script ที่จะเปลี่ยนรูปแบบการเขียนโค้ดของงานคุณไปอย่างสิ้นเชิง และทำให้มันง่ายขึ้นด้วย 999s-bridge ของพวกเรา"
 ---
 
-### Requirements - ความต้องการขั้นพื้นฐาน
+## Requirements - ความต้องการขั้นพื้นฐาน
 
-- FXServer (ต้องรองรับ Onesync, GlobalState)
-- ESX
+- **FXServer** (ต้องรองรับ Onesync, GlobalState)
+- **ESX**
+
+## Schema Manager
+
+Schema นั้นจำเป็นในการที่จะใช้ร่วมกันกับ Event Manager โดยรูปแบบการสร้าง Schema เบื้องต้นเป็นดังนี้
+
+```lua
+--[[
+	NS.createSchema(name, paramsSort)
+]]
+
+NS.createSchema('999s:test-get-name', { name = 1, age = 2 })
+	.registerAs('test-get-name')
+```
+
+| Parameter  | Type                    | Description                                          | Note                  |
+| ---------- | ----------------------- | ---------------------------------------------------- | --------------------- |
+| name       | string \| string[]      | ชื่อสามารถเป็นแค่ string หรือ { 'abc', 'def' }       |                       |
+| paramsSort | table\<string, number\> | เป็นการกำหนดลำดับของ Parameter ที่ส่งเข้ามายัง Event | { name = 1, age = 2 } |
+
+การเรียกใช้ฟังก์ชั่น `registerAs` เป็นการบอกให้ระบบจดจำข้อมูล **schema** นี้เพื่อจะนำไปใช้ในขั้นตอนการสร้าง **Event** หรือการ **Trigger Event** 
+
+และนอกจากนี้คุณยังสามารถกำหนด **Parameters Type** ได้อีกด้วยหลังจากที่ใช้งานฟังก์ชั่น `createSchema` 
+
+```
+NS.createSchema('999s:test-get-name', { name = 1, age = 2 })
+	.makeTypes({
+		name = 'string',
+		age = 'number'
+	})
+	.registerAs('test-get-name')
+```
+
+เพียงเท่านี้คุณก็จะได้ **schema** ชื่อ `test-get-name` ไปใช้ในการสร้าง **Event** หรือการ **Trigger Event** แล้ว
+
+## Event Manager
+
+### Listener - สำหรับรับการส่งข้อมูล
+
+จากข้อมูลในส่วนการสร้าง **schema** เราจะนำ **schema** `test-get-name` มาทดลองใช้งานในส่วนนี้กันต่อ
+
+<CodeGroup>
+
+```lua main.lua
+--[[
+	NS.onEvent(schemaName, fn, isNet)
+]]
+
+NS.onEvent('test-get-name', function(ctx)
+	local name = ctx.get('name')
+	local age = ctx.get('age')
+
+	print('name', name, type(name)) -- output: name 999s string
+	print('age', age, type(age)) -- output: age 20 number
+end, false)
+
+-- Test
+TriggerEvent('999s:test-get-name', '999s', 20)
+```
+
+</CodeGroup>
+
+จะเห็นได้ว่า `paramsSort` ที่เราได้ตั้งใน **schema** นั้นเราจะนำมาใช้ `get` ข้อมูลที่ **Event** ได้รับมาจากตัวอย่างเราทำการ `get` มาสองข้อมูลก็คือ `name` และ `age` 
+
+| Parameter        | Type                   | Description                                                                         | Note                                       |
+| ---------------- | ---------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------ |
+| schema           | string \| SchemaObject | ชื่อที่เราทำการบันทึกด้วยฟังก์ชั่น registerAs หรือ Object ที่เราได้จากการ getSchema | getSchema ใช้งานได้เมื่อทำการ createSchema |
+| fn               | fun(ctx)               | ฟังก์ชั่นสำหรับรับข้อมูลเมื่อมีการ Trigger Event                                    |                                            |
+| isNet (optional) | boolean                | เป็นการกำหนดว่าจะสร้าง Event แบบ Local หรือ Net                                     |                                            |
+
+นอกจากนี้คุณยังสามารถใช้งาน **Alias function** เพื่อสร้าง **Event** ได้
+
+`NS.onLocalEvent(schema, fn)`  - ใช้เพื่อสร้าง **Event** สำหรับใช้ภายใน (Client only or Server only)\
+`NS.onNetEvent(schema, fn)` - ใช้เพื่อสร้าง **Event** สำหรับใช้ภายในและภายนอก (Client and Server)
