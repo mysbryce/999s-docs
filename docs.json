@@ -22,7 +22,14 @@
           {
             "group": "Resources",
             "pages": [
-              "scripts/999s-bridge/getting-started"
+              {
+                "group": "999s Bridge",
+                "pages": [
+                  "scripts/999s-bridge/getting-started",
+                  "scripts/999s-bridge/schema-manager",
+                  "scripts/999s-bridge/event-manager"
+                ]
+              }
             ]
           }
         ]
