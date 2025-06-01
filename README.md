@@ -82,6 +82,6 @@ For support inquiries, please contact: [fx.frame009@gmail.com](mailto:fx.frame00
 
 ## License
 
-This project is protected by DMCA. All rights reserved.
+All my resources (non open-source) are protected by DMCA. All rights reserved.
 
 ![DMCA Protection Status](images/dmca-badge-w100-5x1-01.png)
