@@ -1,32 +1,87 @@
-# Mintlify Starter Kit
+# 999s Documentation
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+A modern documentation website for 999s scripting resources, built with Mintlify.
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+![Hero](images/9s-hero.jpg)
 
-### Development
+## Overview
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
+999s Documentation is a comprehensive guide for scripting resources that help developers write better, more maintainable code. The documentation focuses on providing clear, easy-to-understand guides for various scripting tools and utilities, with a particular emphasis on the 999s Bridge framework.
+
+## Features
+
+- 📚 Modern documentation with a clean, intuitive interface
+- 🎨 Custom theme with beautiful color scheme
+- 🔧 Comprehensive API references
+- 📱 Responsive design for all devices
+- 🌐 Multi-language support (English and Thai)
+
+## Project Structure
 
 ```
-npm i -g mintlify
+docs.json           # Mintlify configuration
+favicon.png         # Site favicon
+index.mdx          # Home page
+style.css          # Custom styles
+images/            # Image assets
+logo/              # Logo assets
+scripts/           # Documentation content
+└── 999s-bridge/   # Bridge framework documentation
+    ├── getting-started.mdx
+    ├── schema-manager.mdx
+    ├── event-manager.mdx
+    ├── debug.mdx
+    ├── state.mdx
+    └── array.mdx
 ```
 
-Run the following command at the root of your documentation (where docs.json is)
+## Documentation Content
 
+The documentation covers several key areas:
+
+- **Getting Started Guide**: Basic setup and requirements
+- **999s Bridge Framework**:
+  - Schema Management
+  - Event System
+  - Debug Tools
+  - State Management
+  - Array Utilities
+
+## Development
+
+This documentation site is built using [Mintlify](https://mintlify.com/), a modern documentation platform.
+
+### Requirements
+
+- Node.js
+- Mintlify CLI
+
+### Local Development
+
+1. Install Mintlify CLI:
+```bash
+npm install -g mintlify
 ```
+
+2. Start the development server:
+```bash
 mintlify dev
 ```
 
-### Publishing Changes
+3. Preview the documentation at `http://localhost:3000`
 
-Install our Github App to auto propagate changes from your repo to your deployment. Changes will be deployed to production automatically after pushing to the default branch. Find the link to install on your dashboard. 
+## Support
 
-#### Troubleshooting
+For support inquiries, please contact: [fx.frame009@gmail.com](mailto:fx.frame009@gmail.com)
 
-- Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
-- Page loads as a 404 - Make sure you are running in a folder with `docs.json`
+## Links
+
+- [Documentation](https://999s.mintlify.app/)
+- [Portfolio](https://stateless-prt.vercel.app)
+- [GitHub](https://github.com/mysbryce)
+
+## License
+
+This project is protected by DMCA. All rights reserved.
+
+![DMCA Protection Status](images/dmca-badge-w100-5x1-01.png)
