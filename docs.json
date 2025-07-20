@@ -33,6 +33,13 @@
                   "scripts/999s-bridge/state",
                   "scripts/999s-bridge/array"
                 ]
+              },
+              {
+                "group": "NS Core",
+                "icon": "code",
+                "pages": [
+                  "scripts/ns_core/getting-started"
+                ]
               }
             ]
           }
