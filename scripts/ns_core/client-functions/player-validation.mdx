@@ -15,20 +15,33 @@ print(ESX.DumpTable(item))
 ```
 </CodeGroup>
 
-### Parameters
+<Columns cols={2}>
+  <div>
+    ### Parameters
 
-<ParamField path="name" type="string" required>
-  ชื่อไอเทม
-</ParamField>
-<ParamField path="validate" type="boolean">
-  ตรวจสอบบน Server หรือไม่ ถ้าหากไม่กำหนดหรือ false จะตรวจสอบเฉพาะ Client
-</ParamField>
+    ข้อมูลที่ต้องส่งไปยังฟังก์ชั่น
 
-### Return
+    <ParamField path="name" type="string" required>
+      ชื่อไอเทม
+    </ParamField>
+    <ParamField path="validate" type="boolean" default={false}>
+      ตรวจสอบบน Server หรือไม่ ถ้าหากไม่กำหนดหรือ false จะตรวจสอบเฉพาะ Client
+    </ParamField>
+  </div>
+  <div>
+    ### Return
 
-<ParamField path="ESXItem?" type="{ name: string, label: string, count: integer, weight: number, limit: integer, rare: boolean, canRemove: boolean } | nil" required>
-  รายการข้อมูลไอเทม
-</ParamField>
+    สำคัญมีโอกาสเป็น `nil`
+
+    <ResponseField name="name" type="string" required>ชื่อไอเทม</ResponseField>
+    <ResponseField name="label" type="string" required>คำแสดงทั่วไป</ResponseField>
+    <ResponseField name="count" type="integer" required>จำนวนที่มี</ResponseField>
+    <ResponseField name="rare" type="boolean" required>ไอเทมชิ้นนี้พิเศษหรือไม่</ResponseField>
+    <ResponseField name="canRemove" type="boolean" required>สามารถลบออกจากกระเป๋าได้หรือไม่</ResponseField>
+    <ResponseField name="limit" type="integer" default={-1}>จำนวนที่จำกัดในการเก็บ</ResponseField>
+    <ResponseField name="weight" type="number" default={0}>น้ำหนักต่อชิ้น</ResponseField>
+  </div>
+</Columns>
 
 ## Account Validation
 
@@ -39,17 +52,26 @@ print(ESX.DumpTable(account))
 ```
 </CodeGroup>
 
-### Parameters
+<Columns cols={2}>
+  <div>
+    ## Parameters
 
-<ParamField path="name" type="string" required>
-  ชื่อบัญชี
-</ParamField>
-<ParamField path="validate" type="boolean">
-  ตรวจสอบบน Server หรือไม่ ถ้าหากไม่กำหนดหรือ false จะตรวจสอบเฉพาะ Client
-</ParamField>
+    ข้อมูลที่ต้องส่งไปยังฟังก์ชั่น
 
-### Return
+    <ParamField path="name" type="string" required>
+      ชื่อบัญชี
+    </ParamField>
+    <ParamField path="validate" type="boolean" default={false}>
+      ตรวจสอบบน Server หรือไม่ ถ้าหากไม่กำหนดหรือ false จะตรวจสอบเฉพาะ Client
+    </ParamField>
+  </div>
+  <div>
+    ## Return
 
-<ParamField path="ESXAccount?" type="{ name: string, label: string, money: number } | nil" required>
-  รายการข้อมูลบัญชี
-</ParamField>
+    สำคัญมีโอกาสเป็น `nil`
+
+    <ResponseField name="name" type="string" required>ชื่อบัญชี</ResponseField>
+    <ResponseField name="label" type="string" required>คำแสดงทั่วไป</ResponseField>
+    <ResponseField name="money" type="integer" required>จำนวนเงินที่มี</ResponseField>
+  </div>
+</Columns>

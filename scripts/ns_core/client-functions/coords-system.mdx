@@ -125,18 +125,20 @@ app:start()
   ระยะห่างปัจจุบันของผู้เล่นจากตำแหน่ง
 </ParamField>
 
-### Override Function: onEnter
+### Override Function Parameters
+<Columns cols={2}>
+  <div>
+    ### onEnter
 
-#### Paramaters
+    <ParamField path="name" type="string">
+      ชื่อของตำแหน่ง
+    </ParamField>
+  </div>
+  <div>
+    ### onExit
 
-<ParamField path="name" type="string">
-  ชื่อของตำแหน่ง
-</ParamField>
-
-### Override Function: onExit
-
-#### Paramaters
-
-<ParamField path="name" type="string">
-  ชื่อของตำแหน่ง
-</ParamField>
+    <ParamField path="name" type="string">
+      ชื่อของตำแหน่ง
+    </ParamField>
+  </div>
+</Columns>
