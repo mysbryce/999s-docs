@@ -4,8 +4,8 @@
 :root {
     --font-mono: 'Fira Code';
     --font-family-body-custom: 'Anuphan';
+    --font-family-headings-custom: 'Anuphan';
 }
-
 
 .badge {
     display: inline-block;
