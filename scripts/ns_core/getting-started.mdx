@@ -34,6 +34,38 @@ server_scripts {
 }
 ```
 
+หลังจากนั้นให้คุณไปที่ไฟล์ฝั่ง Client ของคุณและเริ่มต้นใช้งานทรัพยากร `ns_core`
+
+<CodeGroup>
+```lua client/your-client-file.lua
+local app = lib.client:new(self, ESX)
+  RegisterCommand('get-item', function(_, args)
+    local item = self:getItem(args[1], true)
+    print(ESX.DumpTable(item))
+  end, false)
+end
+
+app:start()
+
+--- Test
+--- Function: self:getItem(name: string, validate?: boolean)
+--- Execute command /get-item bread
+--- Output: {
+---   ['name'] = 'bread'
+---   ['count'] = ...,
+---   ['...'] = ...
+--- }
+```
+</CodeGroup>
+
+ฟังก์ชั่นที่เราทำการส่งเข้าไปใน `lib.client:new` จะทำงานเมื่อผู้เล่นโหลดตัวละครสำเร็จแล้วโดยอ้างอิงจากทรัพยากร `es_extended` ฟังก์ชั่น `ESX.IsPlayerLoaded`
+โดยฟังก์ชั่นตัวอย่าง `getItem` จะมีการส่ง `Parameters` 2 อย่างก็คือ 
+
+| Name       | Type                                  | Required                                              | Default | 
+| ---------- | ------------------------------------- | ----------------------------------------------------- | ------- |
+| `name`     | string                                | <span className="badge badge-success">YES</span>      | nil     |
+| `validate` | bolean                                | <span className="badge badge-neutral">NO</span>       | false   |
+
 <a href="//www.dmca.com/Protection/Status.aspx?ID=ad2f854d-b51f-4d1c-ad1e-100539e77173" title="DMCA.com Protection Status" class="dmca-badge" />
 
 <img

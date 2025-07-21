@@ -38,7 +38,20 @@
                 "group": "NS Core",
                 "icon": "code",
                 "pages": [
-                  "scripts/ns_core/getting-started"
+                  "scripts/ns_core/getting-started",
+
+                  {
+                    "group": "Client Functions",
+                    "icon": "2",
+                    "pages": [
+                      "scripts/ns_core/client-functions/coords-system"
+                    ]
+                  },
+                  {
+                    "group": "Server Functions",
+                    "icon": "3",
+                    "pages": []
+                  }
                 ]
               }
             ]
