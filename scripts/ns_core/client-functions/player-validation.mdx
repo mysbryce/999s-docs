@@ -16,11 +16,18 @@ print(ESX.DumpTable(item))
 </CodeGroup>
 
 ### Parameters
+
 <ParamField path="name" type="string" required>
   ชื่อไอเทม
 </ParamField>
 <ParamField path="validate" type="boolean">
   ตรวจสอบบน Server หรือไม่ ถ้าหากไม่กำหนดหรือ false จะตรวจสอบเฉพาะ Client
+</ParamField>
+
+### Return
+
+<ParamField path="ESXItem?" type="{ name: string, label: string, count: integer, weight: number, limit: integer, rare: boolean, canRemove: boolean } | nil" required>
+  รายการข้อมูลไอเทม
 </ParamField>
 
 ## Account Validation
@@ -33,9 +40,16 @@ print(ESX.DumpTable(account))
 </CodeGroup>
 
 ### Parameters
+
 <ParamField path="name" type="string" required>
   ชื่อบัญชี
 </ParamField>
 <ParamField path="validate" type="boolean">
   ตรวจสอบบน Server หรือไม่ ถ้าหากไม่กำหนดหรือ false จะตรวจสอบเฉพาะ Client
+</ParamField>
+
+### Return
+
+<ParamField path="ESXAccount?" type="{ name: string, label: string, money: number } | nil" required>
+  รายการข้อมูลบัญชี
 </ParamField>
