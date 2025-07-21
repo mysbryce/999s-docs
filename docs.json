@@ -44,7 +44,8 @@
                     "group": "Client Functions",
                     "icon": "2",
                     "pages": [
-                      "scripts/ns_core/client-functions/coords-system"
+                      "scripts/ns_core/client-functions/coords-system",
+                      "scripts/ns_core/client-functions/player-validation"
                     ]
                   },
                   {

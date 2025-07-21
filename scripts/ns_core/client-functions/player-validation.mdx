@@ -1,0 +1,41 @@
+---
+title: "Player Validation"
+description: "นี่คือ Script ที่จะเปลี่ยนรูปแบบการเขียนโค้ดของงานคุณไปอย่างสิ้นเชิง และทำให้มันง่ายขึ้นด้วย ns_core ของพวกเรา (Replacer of 999s-bridge)"
+icon: "2"
+---
+
+ระบบสำหรับการตรวจสอบข้อมูลของผู้เล่นที่จะทำให้คุณตรวจสอบข้อมูลได้ง่ายขึ้น
+
+## Item Validation
+
+<CodeGroup>
+```lua client/your-client-file.lua
+local item = self:getItem('bread', false)
+print(ESX.DumpTable(item))
+```
+</CodeGroup>
+
+### Parameters
+<ParamField path="name" type="string" required>
+  ชื่อไอเทม
+</ParamField>
+<ParamField path="validate" type="boolean">
+  ตรวจสอบบน Server หรือไม่ ถ้าหากไม่กำหนดหรือ false จะตรวจสอบเฉพาะ Client
+</ParamField>
+
+## Account Validation
+
+<CodeGroup>
+```lua client/your-client-file.lua
+local account = self:getAccount('money', false)
+print(ESX.DumpTable(account))
+```
+</CodeGroup>
+
+### Parameters
+<ParamField path="name" type="string" required>
+  ชื่อบัญชี
+</ParamField>
+<ParamField path="validate" type="boolean">
+  ตรวจสอบบน Server หรือไม่ ถ้าหากไม่กำหนดหรือ false จะตรวจสอบเฉพาะ Client
+</ParamField>
