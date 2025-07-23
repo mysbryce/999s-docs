@@ -23,7 +23,7 @@
             "group": "Resources",
             "pages": [
               {
-                "group": "999s Bridge",
+                "group": "999s Bridge (Deprecated)",
                 "icon": "code",
                 "pages": [
                   "scripts/999s-bridge/getting-started",
@@ -57,6 +57,15 @@
                     "icon": "3",
                     "pages": []
                   }
+                ]
+              },
+              {
+                "group": "NS Async",
+                "icon": "code",
+                "pages": [
+                  "scripts/ns_async/getting-started",
+                  "scripts/ns_async/parallel",
+                  "scripts/ns_async/parallel-limit"
                 ]
               }
             ]
