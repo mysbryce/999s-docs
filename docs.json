@@ -23,7 +23,14 @@
             "group": "Resources",
             "pages": [
               {
-                "group": "NS Async",
+                "group": "sure_lib",
+                "icon": "code",
+                "pages": [
+                  "scripts/sure_lib/getting-started"
+                ]
+              },
+              {
+                "group": "ns_async",
                 "icon": "code",
                 "pages": [
                   "scripts/ns_async/getting-started",
