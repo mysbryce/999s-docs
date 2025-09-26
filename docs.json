@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "999s Documentation",
   "colors": {
-    "primary": "#4c659e",
-    "light": "#96b4fa",
-    "dark": "#1a2c4a"
+    "primary": "#111",
+    "light": "#eee",
+    "dark": "#888"
   },
   "favicon": "/favicon.png",
   "navigation": {
