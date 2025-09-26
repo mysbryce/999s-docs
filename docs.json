@@ -3,7 +3,7 @@
   "theme": "mint",
   "name": "999s Documentation",
   "colors": {
-    "primary": "#111",
+    "primary": "#999",
     "light": "#eee",
     "dark": "#888"
   },
