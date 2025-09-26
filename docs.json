@@ -23,43 +23,6 @@
             "group": "Resources",
             "pages": [
               {
-                "group": "999s Bridge (Deprecated)",
-                "icon": "code",
-                "pages": [
-                  "scripts/999s-bridge/getting-started",
-                  "scripts/999s-bridge/schema-manager",
-                  "scripts/999s-bridge/event-manager",
-                  "scripts/999s-bridge/debug",
-                  "scripts/999s-bridge/state",
-                  "scripts/999s-bridge/array"
-                ]
-              },
-              {
-                "group": "NS Core",
-                "icon": "code",
-                "pages": [
-                  "scripts/ns_core/getting-started",
-
-                  {
-                    "group": "Client Functions",
-                    "icon": "2",
-                    "pages": [
-                      "scripts/ns_core/client-functions/coords-system",
-                      "scripts/ns_core/client-functions/player-validation",
-                      "scripts/ns_core/client-functions/handle-nils",
-                      "scripts/ns_core/client-functions/on-key",
-                      "scripts/ns_core/client-functions/progress",
-                      "scripts/ns_core/client-functions/debug"
-                    ]
-                  },
-                  {
-                    "group": "Server Functions",
-                    "icon": "3",
-                    "pages": []
-                  }
-                ]
-              },
-              {
                 "group": "NS Async",
                 "icon": "code",
                 "pages": [
