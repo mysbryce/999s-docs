@@ -2,7 +2,7 @@
 
 A modern documentation website for 999s scripting resources, built with Mintlify.
 
-![Hero](images/9s-hero.jpg)
+![Hero](images/hero.png)
 
 ## Overview
 
