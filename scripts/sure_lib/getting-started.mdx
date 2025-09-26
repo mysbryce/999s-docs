@@ -1,7 +1,6 @@
 ---
 title: "Getting Started"
-description: "นี่คือ Script ที่จะเปลี่ยนรูปแบบการเขียนโค้ดของงานคุณไปอย่างสิ้นเชิง และทำให้มันง่ายขึ้นด้วย sure_lib ของพวกเรา"
-icon: "1"
+description: "sure_lib คือทรัพยากรที่จะเข้ามาช่วยในการเขียนทรัพยากรของคุณให้เข้าใจและดูง่ายขึ้นด้วยหลักการ Modern-First lua with useful utilities"
 ---
 
 ## Information - ข้อมูลเบื้องต้น
@@ -10,7 +9,7 @@ icon: "1"
 
 ## Requirements - ความต้องการขั้นพื้นฐาน
 
-- **FXServer** (ต้องรองรับ Onesync, GlobalState)
+- **FXServer** (ต้องรองรับ Onesync)
 - **es_extended**
 - **ox_lib**
 
@@ -34,37 +33,34 @@ shared_scripts {
 }
 ```
 
-หลังจากนั้นให้คุณไปที่ไฟล์ฝั่ง Client ของคุณและเริ่มต้นใช้งานทรัพยากร `sure_lib`
+หลังจากนั้นให้คุณไปที่ไฟล์ฝั่ง Server หรือ Client ของคุณและเริ่มต้นใช้งานทรัพยากร `sure_lib`
 
 <CodeGroup>
-```lua client/your-client-file.lua
-local app = lib.client:new(self, ESX)
-  RegisterCommand('get-item', function(_, args)
-    local item = self:getItem(args[1], true)
-    print(ESX.DumpTable(item))
-  end, false)
-end
+```lua client-or-server/your-client-file.lua
+local v = GetModule('Validator')
 
-app:start()
+local objectTesting = v.Object({
+  firstname = v.String().Required(),
+  lastname = v.String().Required()
+})
 
---- Test
---- Function: self:getItem(name: string, validate?: boolean)
---- Execute command /get-item bread
---- Output: {
----   ['name'] = 'bread'
----   ['count'] = ...,
----   ['...'] = ...
---- }
+local success, msg = pcall(function()
+  objectTesting.Parse({
+    firstname = 'Sure',
+    lastname = 'Lib'
+  })
+end)
+
+print(success, msg)
 ```
 </CodeGroup>
 
-ฟังก์ชั่นที่เราทำการส่งเข้าไปใน `lib.client:new` จะทำงานเมื่อผู้เล่นโหลดตัวละครสำเร็จแล้วโดยอ้างอิงจากทรัพยากร `es_extended` ฟังก์ชั่น `ESX.IsPlayerLoaded`
-โดยฟังก์ชั่นตัวอย่าง `getItem` จะมีการส่ง `Parameters` 2 อย่างก็คือ 
+โดยการทำงานของเราจะเป็นรูปแบบการใช้งานผ่าน Module ซึ่งคุณสามารถที่จะเลือก Module ที่จะใช้งานตามความจำเป็นได้เองโดยปัจจุบันมี Module ทั้งหมดดังนี้
 
-| Name       | Type                                  | Required                                              | Default | 
-| ---------- | ------------------------------------- | ----------------------------------------------------- | ------- |
-| `name`     | string                                | <span className="badge badge-success">YES</span>      | nil     |
-| `validate` | bolean                                | <span className="badge badge-neutral">NO</span>       | false   |
+- Cooldown (Module สำหรับการนับเวลาเพื่อให้เวลาทุกคนภายในเซิฟเวอร์สอดคล้องกัน)
+- Schema Validation (Module สำหรับการตรวจสอบข้อมูลว่าเป็นไปตาม Schema หรือไม่)
+- ESX-Modern Utility Functions (Module สำหรับการเรียกใช้ฟังก์ชั่นของ ESX โดยง่าย)
+- Track - Reactive System (RippleJS-like) (Module สำหรับการ Track ข้อมูลตัวแปรต่าง ๆ และสามารถ Trigger Effect เมื่อมีการเปลี่ยนแปลงค่าได้)
 
 <a href="//www.dmca.com/Protection/Status.aspx?ID=ad2f854d-b51f-4d1c-ad1e-100539e77173" title="DMCA.com Protection Status" class="dmca-badge" />
 
