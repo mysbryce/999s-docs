@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "999s Documentation",
+  "name": "Sure Documentation",
   "colors": {
     "primary": "#999",
     "light": "#eee",
@@ -59,8 +59,8 @@
     }
   },
   "logo": {
-    "light": "/logo/fulltext.png",
-    "dark": "/logo/fulltext.png"
+    "light": "/logo/dark_logo.png",
+    "dark": "/logo/light_logo.png"
   },
   "navbar": {
     "links": [
